@@ -34,15 +34,14 @@ services:
       # A web based interface for managing your docker containers.
       
       
-  portainer:
-    image: portainer/portainer
+  jupyter_all_spark:
+    image: jupyter/all-spark-notebook
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./portainer-data:/data
+      - "$PWD":/jupyter-work:/work
         # Enable you to access potainers web interface from your host machine
-        # using http://localhost:10001
+        # using http://localhost:8888
     ports:
-      - "10001:9000"
+      - "8889:8888"
       
 volumes:
   cassandra_data:
