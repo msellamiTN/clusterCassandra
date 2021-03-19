@@ -32,7 +32,18 @@ services:
       - MAX_HEAP_SIZE=2G
       - HEAP_NEWSIZE=200M
       # A web based interface for managing your docker containers.
-      
+     
+  jupyter_all_spark:
+    image: jupyter/all-spark-notebook
+    hostname: jupyter_all_spark
+    container_name: jupyter_all_spark
+ 
+    volumes:
+      - /jupyter-work:/work
+        # Enable you to access potainers web interface from your host machine
+        # using http://localhost:8888
+    ports:
+      - "8889:8888"      
       
 volumes:
   cassandra_data:
