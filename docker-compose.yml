@@ -68,8 +68,8 @@ services:
     networks:
       - elk   
   jupyter_all_spark:
-    image: jupyter/all-spark-notebook
-    hostname: jupyter_all_spark
+    image: jupyter/scipy-notebook
+    hostname: scipy_all_spark
     container_name: jupyter_all_spark
     networks:
       - elk 
