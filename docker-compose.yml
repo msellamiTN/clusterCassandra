@@ -19,9 +19,7 @@ services:
       network.publish_host: _eth0_
     networks:
       - elk
-    deploy:
-      mode: replicated
-      replicas: 1
+   
   kibana:
     image: docker.elastic.co/kibana/kibana:7.10.2
     ports:
@@ -31,9 +29,7 @@ services:
         target: /usr/share/kibana/config/kibana.yml
     networks:
       - elk
-    deploy:
-      mode: replicated
-      replicas: 1      
+      
       
   cassandra:
     image: docker.io/bitnami/cassandra:3-debian-10
