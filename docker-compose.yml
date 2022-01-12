@@ -35,7 +35,7 @@ services:
   cassandra3:
     image: docker.io/bitnami/cassandra:3-debian-10
     ports:
-      - 7001:7000
+      - 7002:7000
       - 39043:9042
     volumes:
       - cassandra3_data:/bitnami
